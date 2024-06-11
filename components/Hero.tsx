@@ -28,7 +28,7 @@ const Hero = () => {
           <h2 className="uppercase tracking-widget text-xs text-center text-blue-100 max-w-80">
               Personal Portfolio
           </h2>
-          <TextGenerateEffect className="text-center text-[40px] md:text-5xl lg:text-6xl" words="Empowered by code, driven by curiosity, and fueled by a passion for problem-solving"/>
+          <TextGenerateEffect className="text-center text-[40px] md:text-4xl lg:text-5xl" words="Empowered by code, driven by curiosity, and fueled by a passion for problem-solving"/>
 
           <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl ">Hi! I am Andrae, a Developer turning coffee into ideas and reality.</p>
 
