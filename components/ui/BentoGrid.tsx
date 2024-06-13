@@ -63,8 +63,37 @@ export const BentoGridItem = ({
 
   const handleCopy = () => {
     const text = "ammapute1@up.edu.ph";
-    navigator.clipboard.writeText(text);
-    setCopied(true);
+
+    // Attempt to copy text to clipboard using navigator.clipboard
+    if (navigator.clipboard) {
+      navigator.clipboard
+        .writeText(text)
+        .then(() => {
+          console.log("Text copied to clipboard");
+          setCopied(true); // Update state or perform any other actions
+        })
+        .catch((err) => {
+          console.error("Failed to copy text: ", err);
+          // Fallback to alternative method if clipboard API fails
+          fallbackCopyTextToClipboard(text);
+        });
+    } else {
+      // Fallback to alternative method if clipboard API is not supported
+      fallbackCopyTextToClipboard(text);
+    }
+  };
+
+  // Fallback method using document.execCommand for older browsers or unsupported environments
+  const fallbackCopyTextToClipboard = (text: string) => {
+    var dummy = document.createElement("textarea");
+    dummy.innerText = text;
+    document.body.appendChild(dummy);
+    dummy.select();
+    document.execCommand("copy");
+    document.body.removeChild(dummy);
+
+    console.log("Text copied to clipboard (fallback)");
+    setCopied(true); // Update state or perform any other actions
   };
 
   return (
