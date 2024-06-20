@@ -47,8 +47,15 @@ export const BentoGridItem = ({
   titleClassName?: string;
   spareImg?: string;
 }) => {
-  const leftLists = ["MERN Stack", "Typescript", "NextJS", "Flutter & Firebase"];
-  const rightLists = ["Python", "C", "R", "Java"];
+  const leftLists = [
+    "React & NextJS",
+    "Node.js & Express.js",
+    "Flutter & Firebase",
+    "JavaScript & TypeScript",
+    "Python & MariaDB",
+  ];
+
+  const rightLists = ["MongoDB", "Firebase", "Java", "C", "R"];
 
   const [copied, setCopied] = useState(false);
 
@@ -64,26 +71,20 @@ export const BentoGridItem = ({
   const handleCopy = () => {
     const text = "ammapute1@up.edu.ph";
 
-    // Attempt to copy text to clipboard using navigator.clipboard
     if (navigator.clipboard) {
       navigator.clipboard
         .writeText(text)
         .then(() => {
-          console.log("Text copied to clipboard");
-          setCopied(true); // Update state or perform any other actions
+          setCopied(true);
         })
         .catch((err) => {
-          console.error("Failed to copy text: ", err);
-          // Fallback to alternative method if clipboard API fails
           fallbackCopyTextToClipboard(text);
         });
     } else {
-      // Fallback to alternative method if clipboard API is not supported
       fallbackCopyTextToClipboard(text);
     }
   };
 
-  // Fallback method using document.execCommand for older browsers or unsupported environments
   const fallbackCopyTextToClipboard = (text: string) => {
     var dummy = document.createElement("textarea");
     dummy.innerText = text;
@@ -91,16 +92,15 @@ export const BentoGridItem = ({
     dummy.select();
     document.execCommand("copy");
     document.body.removeChild(dummy);
-
-    console.log("Text copied to clipboard (fallback)");
-    setCopied(true); // Update state or perform any other actions
+    setCopied(true);
   };
 
   return (
     <div
       className={cn(
         "row-span-1 relative overflow-hidden rounded-3xl border border-white/[0.1] group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none justify-between flex flex-col space-y-4",
-        className
+        className,
+        { "hover:overflow-visible z-50": id === 3 }
       )}
       style={{
         background: "rgb(4,7,29)",
@@ -108,20 +108,20 @@ export const BentoGridItem = ({
           "linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%)",
       }}
     >
-      <div className={`${id === 6 && "flex justify-center"} h-full`}>
+      <div className={`${id === 6 && "flex justify-center"} h-full relative`}>
         <div className="w-full h-full absolute">
           {img && (
             <img
               src={img}
               alt={img}
-              className={cn(imgClassName, "object-cover object-center ")}
+              className={cn(imgClassName, "object-cover object-center")}
             />
           )}
         </div>
         <div
           className={`absolute right-0 -bottom-5 ${
             id === 5 && "w-full opacity-80"
-          } `}
+          }`}
         >
           {spareImg && (
             <img
@@ -133,7 +133,7 @@ export const BentoGridItem = ({
         </div>
         {id === 6 && (
           <BackgroundGradientAnimation>
-            <div className="absolute z-50 inset-0 flex items-center justify-center text-white font-bold px-4 pointer-events-none text-3xl text-center md:text-4xl lg:text-7xl"></div>
+            <div className="absolute z-10 inset-0 flex items-center justify-center text-white font-bold px-4 pointer-events-none text-3xl text-center md:text-4xl lg:text-7xl"></div>
           </BackgroundGradientAnimation>
         )}
         {id === 2 && <GridGlobe />}
@@ -143,41 +143,41 @@ export const BentoGridItem = ({
             "group-hover/bento:translate-x-2 transition duration-200 relative md:h-full min-h-40 flex flex-col px-5 p-5 lg:p-10"
           )}
         >
-          <div className="font-sans font-extralight md:max-w-32 md:text-xs lg:text-base text-sm text-[#C1C2D3] z-10">
+          <div className="font-sans font-extralight md:max-w-32 md:text-xs lg:text-base text-sm text-[#C1C2D3] z-20">
             {description}
           </div>
           <div
-            className={`font-sans text-lg lg:text-3xl max-w-96 font-bold z-10`}
+            className={`font-sans text-lg lg:text-3xl max-w-96 font-bold z-20`}
           >
             {title}
           </div>
           {id === 3 && (
-            <div className="flex gap-1 lg:gap-5 w-fit absolute -right-3 lg:-right-2">
-              <div className="flex flex-col gap-3 md:gap-3 lg:gap-2">
+            <div className="flex gap-1 lg:gap-5 w-fit absolute right-0 lg:right-[-2rem] top-0 lg:top-[50%] transform lg:-translate-y-1/2 z-40 group-hover:z-50">
+              <div className="flex flex-col gap-3 md:gap-3 lg:gap-2 relative z-40">
+                <span className="lg:py-2 lg:px-2 py-2 px-2 rounded-lg text-center bg-[#10132E] z-40"></span>
                 {leftLists.map((item, i) => (
                   <span
                     key={i}
-                    className="lg:py-2 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
-                    lg:opacity-100 rounded-lg text-center bg-[#10132E]"
+                    className="lg:py-1 lg:px-2 py-1 px-2 text-xs opacity-50 rounded-lg text-center bg-[#10132E] z-40"
                   >
                     {item}
                   </span>
                 ))}
-                <span className="lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center bg-[#10132E]"></span>
               </div>
-              <div className="flex flex-col gap-3 md:gap-3 lg:gap-2">
+              <div className="flex flex-col gap-3 md:gap-3 lg:gap-2 relative z-40">
                 {rightLists.map((item, i) => (
                   <span
                     key={i}
-                    className="lg:py-2 lg:px-2 py-2 px-3 text-xs lg:text-base opacity-50 
-                    lg:opacity-100 rounded-lg text-center bg-[#10132E]"
+                    className="lg:py-1 lg:px-2 py-1 px-2 text-xs opacity-50 rounded-lg text-center bg-[#10132E] z-40"
                   >
                     {item}
                   </span>
                 ))}
+                <span className="lg:py-2 lg:px-2 py-2 px-2 rounded-lg text-center bg-[#10132E] z-40"></span>
               </div>
             </div>
           )}
+
           {id === 6 && (
             <div className="mt-5 relative">
               <div
