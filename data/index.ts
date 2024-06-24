@@ -185,13 +185,16 @@ export const navItems = [
     {
       id: 1,
       img: "/git.svg",
+      link: "https://github.com/devMapute"
     },
     {
       id: 2,
-      img: "/twit.svg",
+      img: "/fb.svg",
+      link: "https://www.facebook.com/andrae.mapute/"
     },
     {
       id: 3,
       img: "/link.svg",
+      link: "https://www.linkedin.com/in/andrae-mapute"
     },
   ];
