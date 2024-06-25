@@ -88,12 +88,21 @@ export const navItems = [
     },
     {
       id: 3,
-      title: "AI Image SaaS - Canva Application",
-      des: "A REAL Software-as-a-Service app with AI features and a payments and credits system using the latest tech stack.",
+      title: "Black Jack",
+      des: "A standard blackjack game with a scoring system and a leaderboard. ",
       img: "/p3.svg",
       iconLists: ["/py.svg"],
       link: "https://github.com/devMapute/blackjack.git",
     },
+    {
+      id: 4,
+      title: "Food Review System",
+      des: "This information system will allow us to record, in electronic form, data on food reviews and food items from food establishments.",
+      img: "/p4.svg",
+      iconLists: ["/py.svg", "mdb.svg"],
+      link: "https://github.com/devMapute/food-review-system.git",
+    },
+    
     
   ];
   
