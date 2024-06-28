@@ -71,7 +71,7 @@ export const navItems = [
   
   export const projects = [
     {
-      id: 5,
+      id: 1,
       title: "Farm To Table",
       des: "This is an e-commerce platform for the an agriculture organization. It facilitates direct transactions between farmers and consumers, linking farm to table. The DA compiles a catalog of items for sale in the public market, allowing customers to buy directly from the source",
       img: "/p5.svg",
@@ -87,7 +87,7 @@ export const navItems = [
       link: "https://github.com/devMapute/polysolver-suite.git",
     },
     {
-      id: 4,
+      id: 3,
       title: "Food Review System",
       des: "This information system will allow us to record, in electronic form, data on food reviews and food items from food establishments.",
       img: "/p4.svg",
@@ -95,7 +95,7 @@ export const navItems = [
       link: "https://github.com/devMapute/food-review-system.git",
     },
     {
-      id: 1,
+      id: 4,
       title: "Alien Stormfront",
       des: "An action-packed side-scrolling game set in the midst of a burning city under alien attack.",
       img: "/p1.svg",
@@ -103,7 +103,7 @@ export const navItems = [
       link: "https://github.com/devMapute/alien-stormfront.git",
     },
     {
-      id: 3,
+      id: 5,
       title: "Black Jack",
       des: "A standard blackjack game with a scoring system and a leaderboard. ",
       img: "/p3.svg",
