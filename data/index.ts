@@ -94,6 +94,16 @@ export const navItems = [
       iconLists: ["/py.svg", "mdb.svg"],
       link: "https://github.com/devMapute/food-review-system.git",
     },
+    
+    
+    {
+      id: 6,
+      title: "eLBigayan",
+      des: "eLBigayan is a mobile app for donating items to charities in ELBI. Users can sign up as donors or organizations. Donors browse and donate, while organizations manage donations, update statuses, and organize drives. The app uses Firebase Cloud Firestore for data storage and Firebase Authentication for user authentication.",
+      img: "/p6.svg",
+      iconLists: ["/fl.svg", "/fib.svg"],
+      link: "https://github.com/jvcerezo/cmsc23-project.git",
+    },    
     {
       id: 4,
       title: "Alien Stormfront",
@@ -110,8 +120,6 @@ export const navItems = [
       iconLists: ["/py.svg"],
       link: "https://github.com/devMapute/blackjack.git",
     },
-    
-    
     
   ];
   
